@@ -6,8 +6,7 @@ Dashboard interativo desenvolvido para acompanhamento e análise de métricas op
 
 ## 📸 Demonstração do Painel
 
-![Demonstração do Dashboard](./Documentacao/dashboard.png)
-
+![Demonstração do Dashboard](./Documentacao/dashboard.png.png)
 ## 📊 Principais Métricas e Funcionalidades
 
 * **KPIs Operacionais:** Total de Internações, Pacientes Únicos e Média de Dias Internados.
