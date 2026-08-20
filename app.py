@@ -6,7 +6,7 @@ import plotly.express as px
 
 st.set_page_config(page_title="Analytics Hospitalar", layout="wide")
 
-# Conexão e carga de dados (com cache para não travar a tela)
+# Conexão e carga de dados 
 @st.cache_data
 def get_data():
     conn = sqlite3.connect('hospital.db')
@@ -25,7 +25,7 @@ def get_data():
         )
     ''')
 
-    # Mock inicial de dados caso o banco esteja limpo
+   
     cursor.execute("SELECT COUNT(*) FROM atendimentos")
     if cursor.fetchone()[0] == 0:
         base_inicial = [
@@ -51,7 +51,7 @@ df_atendimentos = get_data()
 st.title("🏥 Gestão de Leitos e Triagem")
 st.caption("Visão operacional em tempo real do fluxo de atendimento.")
 
-# Filtro lateral (Diferencial de projeto real)
+# Filtro lateral 
 st.sidebar.header("Filtros")
 setor_selecionado = st.sidebar.multiselect(
     "Filtrar por Setor:",
