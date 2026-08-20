@@ -50,9 +50,13 @@ Para apoiar a tomada de decisão da gestão hospitalar, foram desenvolvidas roti
 
 ---
 
-## Como Executar o App Streamlit
+## 🚀 Como Executar o App Streamlit
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-   cd seu-repositorio
+   git clone [https://github.com/PamelaSDQ/painel-gestao-hospitalar.git](https://github.com/PamelaSDQ/painel-gestao-hospitalar.git)
+   cd painel-gestao-hospitalar
+   2. **Instale as dependências:**
+   ```bash
+   python -m pip install streamlit pandas numpy plotly
+   
