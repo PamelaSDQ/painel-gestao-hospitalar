@@ -1,42 +1,58 @@
 # 🏥 Painel de Gestão Hospitalar
 
-Dashboard interativo desenvolvido para acompanhamento e análise de métricas operacionais hospitalares, permitindo a visualização de internações, especialidades ativas e tempo médio de permanência.
+Aplicação e dashboard interativo desenvolvidos para acompanhamento e análise de métricas operacionais hospitalares, permitindo a visualização de internações, capacidade de leitos, tempo médio de espera e análise por especialidades.
 
 ---
 
 ## 📸 Demonstração do Painel
 
 ![Demonstração do Dashboard](./Documentacao/dashboard.png.png)
-## 📊 Principais Métricas e Funcionalidades
-
-* **KPIs Operacionais:** Total de Internações, Pacientes Únicos e Média de Dias Internados.
-* **Evolução Temporal:** Gráfico de linha mostrando a variação mensal do volume de internações.
-* **Análise por Especialidade:** Distribuição e volume de atendimento por área médica.
-* **Perfil Demográfico:** Proporção de internações por sexo.
-* **Filtros Dinâmicos:** Segmentação por Ano, Especialidade, Convênio e Paciente.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Principais Métricas e Funcionalidades
 
-* **Power BI:** Construção dos visuais, modelagem de dados e layout.
-* **SQL:** Criação do banco de dados relacional e consultas de extração.
+* **KPIs Operacionais:** Total de Pacientes, Tempo Médio de Espera e Casos Críticos (Triagem).
+* **Gestão de Leitos:** Distribuição visual do status dos leitos (*Ocupado*, *Livre*, *Em Higienização*) por setor.
+* **Perfil Demográfico e Triagem:** Proporção de atendimentos por nível de prioridade e especialidade.
+* **Filtros Dinâmicos:** Segmentação interativa por Setor, Ano, Convênio e Especialidade.
+
+---
+
+## Tecnologias Utilizadas
+
+* **Python 3.13:** Construção da aplicação interativa via Streamlit e tratamento de dados com Pandas e NumPy.
+* **Streamlit & Plotly:** Interface web e gráficos dinâmicos para gestão operacional.
+* **SQLite / SQL:** Criação do banco de dados relacional (`hospital.db`), modelagem e consultas analíticas.
+* **Power BI:** Modelagem de dados e dashboard executivo (`.pbix`).
 
 ---
 
 ## 📁 Estrutura do Repositório
 
+* `app.py`: Aplicação Streamlit de conexão direta ao SQLite.
+* `hospital.db`: Banco de dados relacional da aplicação.
 * `/DataSet`: Bases e arquivos de dados utilizados.
-* `/Documentacao`: Documentação e regras de negócio do projeto.
-* `/PowerBi`: Arquivo interativo `.pbix` do painel.
-* `/SQL`: Scripts de criação e população do banco de dados.
+* `/Documentacao`: Registros visuais e regras de negócio do projeto.
+* `/PowerBi`: Arquivo interativo `.pbix` do painel executivo.
+* `/SQL`: Scripts de criação, população e consultas de análise de negócio.
 
-[def]: ./Documentacao/dashboard.png
+---
 
-## 📊 Análise de Dados e Indicadores Chave
+## 🗄️ Análise de Dados  (SQL & Python)
 
-Para apoiar a tomada de decisão da gestão hospitalar, foram criadas consultas analíticas em SQL (`SQL/04_Analise_Negocio_Hospitalar.sql`) focadas em otimização operacional, eficiência leito/dia e planejamento financeiro:
+Para apoiar a tomada de decisão da gestão hospitalar, foram desenvolvidas rotinas de integração em Python e consultas analíticas em SQL (`SQL/04_Analise_Negocio_Hospitalar.sql`):
 
-* **Tempo Médio de Permanência por Especialidade:** Mapeamento da média de dias de internação por especialidade médica, identificando gargalos na rotação de leitos e direcionando ações de desospitalização segura.
-* **Sazonalidade e Volume de Atendimentos:** Análise do histórico mensal de internações (via `Dim_Calendario`) para antecipar picos de demanda, permitindo dimensionar escalas de enfermagem e insumos com antecedência.
-* **Participação por Convênio:** Levantamento do volume e representatividade percentual de cada operadora de saúde sobre o total de internações, gerando insumos para negociações contratuais e reajustes.
+* **Conexão Direta e Autônoma:** O script `app.py` realiza consultas SQL dinâmicas no banco SQLite (`hospital.db`), garantindo a criação de tabelas e carga inicial de dados caso o ambiente ainda não esteja configurado.
+* **Tempo Médio de Permanência e Espera:** Mapeamento do fluxo de atendimento e gargalos na rotação de leitos para otimização da desospitalização.
+* **Sazonalidade e Volume de Atendimentos:** Análise do histórico de internações para dimensionamento de escalas de enfermagem e insumos.
+* **Participação por Convênio:** Levantamento da representatividade percentual das operadoras de saúde sobre o total de atendimentos.
+
+---
+
+## Como Executar o App Streamlit
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+   cd seu-repositorio
