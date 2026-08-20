@@ -54,9 +54,16 @@ Para apoiar a tomada de decisão da gestão hospitalar, foram desenvolvidas roti
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/PamelaSDQ/painel-gestao-hospitalar.git](https://github.com/PamelaSDQ/painel-gestao-hospitalar.git)
+   git clone https://github.com/PamelaSDQ/painel-gestao-hospitalar.git
    cd painel-gestao-hospitalar
-   2. **Instale as dependências:**
+   ```
+
+2. **Instale as dependências:**
    ```bash
    python -m pip install streamlit pandas numpy plotly
-   
+   ```
+
+3. **Execute a aplicação:**
+   ```bash
+   python -m streamlit run app.py
+   ```
