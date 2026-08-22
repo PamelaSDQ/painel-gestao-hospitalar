@@ -21,49 +21,34 @@ Aplicação e dashboard interativo desenvolvidos para acompanhamento e análise 
 
 ## Tecnologias Utilizadas
 
-* **Python 3.13:** Construção da aplicação interativa via Streamlit e tratamento de dados com Pandas e NumPy.
-* **Streamlit & Plotly:** Interface web e gráficos dinâmicos para gestão operacional.
-* **SQLite / SQL:** Criação do banco de dados relacional (`hospital.db`), modelagem e consultas analíticas.
-* **Power BI:** Modelagem de dados e dashboard executivo (`.pbix`).
+* **SQL Server / T-SQL:** Criação do banco de dados relacional, modelagem Star Schema e consultas analíticas avançadas.
+* **Power BI:** Modelagem de dados, criação de medidas em DAX e construção do dashboard executivo interativo (`.pbix`).
 
 ---
 
 ## 📁 Estrutura do Repositório
 
-* `app.py`: Aplicação Streamlit de conexão direta ao SQLite.
-* `hospital.db`: Banco de dados relacional da aplicação.
-* `/DataSet`: Bases e arquivos de dados utilizados.
-* `/Documentacao`: Registros visuais e regras de negócio do projeto.
+* `/DataSet`: Arquivos de dados e bases utilizadas para carga no banco.
+* `/Documentacao`: Registros visuais, prints e documentação do projeto.
 * `/PowerBi`: Arquivo interativo `.pbix` do painel executivo.
-* `/SQL`: Scripts de criação, população e consultas de análise de negócio.
+* `/SQL`: Scripts `.sql` de criação das tabelas, população e consultas analíticas de negócio.
 
 ---
 
-## 🗄️ Análise de Dados  (SQL & Python)
+## 🗄️ Análise de Dados (SQL & Power BI)
 
-Para apoiar a tomada de decisão da gestão hospitalar, foram desenvolvidas rotinas de integração em Python e consultas analíticas em SQL (`SQL/04_Analise_Negocio_Hospitalar.sql`):
+Para apoiar a tomada de decisão da gestão hospitalar, foram criadas consultas analíticas em SQL (`SQL/04_Analise_Negocio_Hospitalar.sql`) focadas em otimização operacional e eficiência hospitalar:
 
-* **Conexão Direta e Autônoma:** O script `app.py` realiza consultas SQL dinâmicas no banco SQLite (`hospital.db`), garantindo a criação de tabelas e carga inicial de dados caso o ambiente ainda não esteja configurado.
-* **Tempo Médio de Permanência e Espera:** Mapeamento do fluxo de atendimento e gargalos na rotação de leitos para otimização da desospitalização.
-* **Sazonalidade e Volume de Atendimentos:** Análise do histórico de internações para dimensionamento de escalas de enfermagem e insumos.
-* **Participação por Convênio:** Levantamento da representatividade percentual das operadoras de saúde sobre o total de atendimentos.
+* **Tempo Médio de Permanência:** Mapeamento da média de dias de internação por especialidade médica, identificando gargalos na rotação de leitos e direcionando ações de desospitalização segura.
+* **Sazonalidade e Volume de Atendimentos:** Análise do histórico de internações (via `Dim_Calendario`) para antecipar picos de demanda, permitindo dimensionar escalas de equipe e insumos com antecedência.
+* **Participação por Convênio:** Levantamento da representatividade percentual das operadoras de saúde sobre o total de internações, gerando insumos para negociações contratuais.
 
 ---
 
-## 🚀 Como Executar o App Streamlit
+## 🚀 Como Visualizar o Projeto
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/PamelaSDQ/painel-gestao-hospitalar.git
-   cd painel-gestao-hospitalar
-   ```
-
-2. **Instale as dependências:**
-   ```bash
-   python -m pip install streamlit pandas numpy plotly
-   ```
-
-3. **Execute a aplicação:**
-   ```bash
-   python -m streamlit run app.py
-   ```
+1. **Dashboard no Power BI:** 
+   * Baixe o arquivo `.pbix` na pasta `/PowerBi` e abra no Power BI Desktop para navegar pelos relatórios interativos.
+2. **Scripts SQL:** 
+   * Os scripts de criação, população e análise estão organizados na pasta `/SQL` para execução em qualquer ambiente SQL Server (SSMS).
+   
